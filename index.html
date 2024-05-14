@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Get ML Answer</title>
+    <style>
+      /* CSS để tùy chỉnh giao diện */
+      body {
+        font-family: Arial, sans-serif;
+        text-align: center;
+      }
+      button {
+        padding: 10px 20px;
+        font-size: 16px;
+        cursor: pointer;
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+      }
+      button:hover {
+        background-color: #0056b3;
+      }
+      #result {
+        display: none;
+        margin-top: 20px;
+      }
+      #result img {
+        max-width: 100%;
+        height: auto;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Get ML Answer</h1>
+    <button id="getAnswerBtn">Đáp án ML thầy Thành buổi 14/05</button>
+    <div id="result">
+      <img id="mlImage" src="" alt="ML Answer" />
+    </div>
+
+    <script>
+      // JavaScript để xử lý sự kiện nhấn nút và hiển thị ảnh
+      document
+        .getElementById("getAnswerBtn")
+        .addEventListener("click", function () {
+          // Gửi yêu cầu lấy đáp án ML
+          // Ở đây chúng ta chỉ đơn giản hiển thị ảnh được cung cấp
+          // Nếu bạn muốn tích hợp với API ML thực tế, bạn cần thay đổi phần này
+          var imageUrl =
+            "https://i1.sndcdn.com/avatars-000335251146-h4iz6n-t1080x1080.jpg";
+          displayImage(imageUrl);
+        });
+
+      // Hàm để hiển thị ảnh
+      function displayImage(url) {
+        var resultDiv = document.getElementById("result");
+        var image = document.getElementById("mlImage");
+
+        // Đặt đường dẫn ảnh
+        image.src = url;
+
+        // Hiển thị kết quả
+        resultDiv.style.display = "block";
+      }
+    </script>
+  </body>
+</html>
